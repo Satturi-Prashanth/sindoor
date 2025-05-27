@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY')
-        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_KEY')
+        AWS_ACCESS_KEY_ID = aws-cred('AWS_ACCESS_KEY')
+        AWS_SECRET_ACCESS_KEY = aws-cred('AWS_SECRET_KEY')
         REGION = 'us-east-1'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/your-org/terraform-infra.git', branch: 'main'
+                git url: 'https://github.com/Satturi-Prashanth/facebook.git', branch: 'satturi'
             }
         }
 
